@@ -53,14 +53,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 //register routes
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
-app.use("/words", wordsRouter);
-app.use("/expressions", expressionsRouter);
-app.use("/verbs", verbsRouter);
-app.use("/favoritewords", favoriteWordsRouter);
-app.use("/favoriteexpressions", favoriteExpressionsRouter);
-app.use("/favoriteverbs", favoriteVerbsRouter);
+app.use("/api", indexRouter);
+app.use("/api/users", usersRouter);
+app.use("/api/words", wordsRouter);
+app.use("/api/expressions", expressionsRouter);
+app.use("/api/verbs", verbsRouter);
+app.use("/api/favoritewords", favoriteWordsRouter);
+app.use("/api/favoriteexpressions", favoriteExpressionsRouter);
+app.use("/api/favoriteverbs", favoriteVerbsRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
