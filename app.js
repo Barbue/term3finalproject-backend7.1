@@ -31,7 +31,12 @@ var app = express();
 
 //add CORS middleware
 // stops cors error from frontend api calls
-app.use(cors());
+
+app.use(cors(
+  {
+  origin: process.env.CORS_ORIGIN
+  } ))
+// app.use(cors());
 app.options("*", cors());
 
 //multer
