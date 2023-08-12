@@ -37,7 +37,7 @@ app.use(cors(
   origin: process.env.CORS_ORIGIN
   } ))
 // app.use(cors());
-// app.options("*", cors());
+app.options("*", cors());
 
 //multer
 // app.use(multer());
