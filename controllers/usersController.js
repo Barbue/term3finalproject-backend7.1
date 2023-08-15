@@ -1,5 +1,6 @@
 const User = require("../models/Users");
 const bcrypt = require("bcryptjs");
+const { Verify } = require("crypto");
 const jwt = require("jsonwebtoken");
 
 const createUser = async (req, res) => {
@@ -53,10 +54,10 @@ const verifyUser = async (req, res) => {
 
 		const token = req.body.token;
 		console.log(req.body)
-		console.log(data)
+		
 		const secretKey = process.env.JWT_SECRET_KEY;
 		const verify = jwt.verify(token, secretKey);
-
+        console.log(verify)
 		const foundUser = await User.findOne({ id: verify.userId });
 		verify.role = foundUser.role;
 
