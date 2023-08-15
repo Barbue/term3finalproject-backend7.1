@@ -52,6 +52,7 @@ const verifyUser = async (req, res) => {
 		const tokenHeaderKey = process.env.TOKEN_HEADER_KEY;
 
 		const token = req.header(tokenHeaderKey);
+		console.log(token)
 		const secretKey = process.env.JWT_SECRET_KEY;
 		const verify = jwt.verify(token, secretKey);
 
